@@ -1,13 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Navbar = () => {
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
-  // const logout = () => {
-  //   signOut(auth);
-  //   localStorage.removeItem('accessToken');
-  // };
+  const logout = () => {
+    signOut(auth);
+    // localStorage.removeItem('accessToken');
+  };
   const menuItems = (
     <>
       <li>
@@ -16,6 +19,7 @@ const Navbar = () => {
       <li>
         <Link to='/product'>Product</Link>
       </li>
+
       {/* {user && (
         <li>
           <Link to='/dashboard'>Dashboard</Link>
@@ -29,7 +33,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className='navbar bg-base-100 px-72'>
+    <div className='navbar bg-primary px-72'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label tabIndex='0' className='btn btn-ghost lg:hidden'>
@@ -55,7 +59,7 @@ const Navbar = () => {
         <ul className='menu menu-horizontal p-0'>{menuItems}</ul>
       </div>
       <div className='navbar-end'>
-        {/* {user ? (
+        {user ? (
           <button className='btn btn-ghost font-bold' onClick={logout}>
             Sign Out
           </button>
@@ -63,7 +67,7 @@ const Navbar = () => {
           <Link className='btn btn-ghost font-bold' to='/login'>
             SignUp / Login
           </Link>
-        )} */}
+        )}
       </div>
     </div>
   );
