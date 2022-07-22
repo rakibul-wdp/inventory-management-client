@@ -2,23 +2,19 @@ import React, { useEffect } from 'react';
 import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
-  useSignInWithFacebook,
-  useSignInWithGithub,
   useSignInWithGoogle,
   useUpdateProfile,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading';
 // import useToken from '../../hooks/useToken';
-// import Loading from '../Shared/Loading';
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, createUser, createLoading, createError] =
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-  const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
-  const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
   const [sendEmailVerification, verifySending, verifyError] = useSendEmailVerification(auth);
   const {
     register,
@@ -26,29 +22,31 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const location = useLocation();
 
-  // const [token] = useToken(googleUser || facebookUser || githubUser || createUser);
+  // const [token] = useToken(googleUser || createUser);
   const navigate = useNavigate();
   let signInError;
-  if (googleError || createError || updateError || facebookError || githubError || verifyError) {
+  if (googleError || createError || updateError || verifyError) {
     signInError = (
       <p className='mb-3 text-red-500'>
-        {googleError?.message ||
-          createError?.message ||
-          updateError?.message ||
-          facebookError?.message ||
-          githubError?.message ||
-          verifyError?.message}
+        {googleError?.message || createError?.message || updateError?.message || verifyError?.message}
       </p>
     );
   }
+  let from = location.state?.from?.pathname || '/';
+  useEffect(() => {
+    if (googleUser || createUser) {
+      navigate(from, { replace: true });
+    }
+  }, [googleUser, createUser, from, navigate]);
   // useEffect(() => {
   //   if (token) {
   //     navigate('/');
   //   }
   // }, [navigate, token]);
-  if (googleLoading || createLoading || updating || facebookLoading || githubLoading || verifySending) {
-    // return <Loading />;
+  if (googleLoading || createLoading || updating || verifySending) {
+    return <Loading />;
   }
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
@@ -157,12 +155,6 @@ const SignUp = () => {
           <div className='divider'>OR</div>
           <button onClick={() => signInWithGoogle()} className='btn btn-outline text-lg bg-primary font-bold'>
             Continue with Google
-          </button>
-          <button onClick={() => signInWithFacebook()} className='btn btn-outline text-lg bg-primary font-bold'>
-            Continue with Facebook
-          </button>
-          <button onClick={() => signInWithGithub()} className='btn btn-outline text-lg bg-primary font-bold'>
-            Continue with Github
           </button>
         </div>
       </div>

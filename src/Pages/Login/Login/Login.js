@@ -2,20 +2,16 @@ import React, { useEffect, useState } from 'react';
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
-  useSignInWithFacebook,
-  useSignInWithGithub,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading';
 // import useToken from '../../hooks/useToken';
-// import Loading from '../Shared/Loading';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-  const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
-  const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
   const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, resetSending, resetError] = useSendPasswordResetEmail(auth);
   const {
@@ -31,24 +27,23 @@ const Login = () => {
   // const [token] = useToken(googleUser || emailUser || facebookUser || githubUser);
   let from = location.state?.from?.pathname || '/';
   let signInError;
+  useEffect(() => {
+    if (googleUser || emailUser) {
+      navigate(from, { replace: true });
+    }
+  }, [googleUser, emailUser, from, navigate]);
   // useEffect(() => {
   //   if (token) {
   //     navigate(from, { replace: true });
   //   }
   // }, [from, navigate, token]);
-  if (googleError || emailError || facebookError || githubError || resetError) {
+  if (googleError || emailError || resetError) {
     signInError = (
-      <p className='mb-3 text-red-500'>
-        {googleError?.message ||
-          emailError?.message ||
-          facebookError?.message ||
-          githubError?.message ||
-          resetError?.message}
-      </p>
+      <p className='mb-3 text-red-500'>{googleError?.message || emailError?.message || resetError?.message}</p>
     );
   }
-  if (googleLoading || emailLoading || facebookLoading || githubLoading || resetSending) {
-    // return <Loading />;
+  if (googleLoading || emailLoading || resetSending) {
+    return <Loading />;
   }
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
@@ -113,27 +108,27 @@ const Login = () => {
                   })}
                 />
                 <label className='label'>
-                  {/* {errors.password?.type === 'required' && (
+                  {errors.password?.type === 'required' && (
                     <span className='label-text-alt text-red-500'>{errors.password.message}</span>
                   )}
                   {errors.password?.type === 'minLength' && (
                     <span className='label-text-alt text-red-500'>{errors.password.message}</span>
-                  )} */}
+                  )}
                 </label>
                 <button className='mt-[-15px] mb-5 flex justify-end text-primary' onClick={resetPass}>
                   Forget password?
                 </button>
               </div>
-              {/* {signInError} */}
+              {signInError}
               <input
-                className='w-full max-w-xs btn text-lg uppercase font-bold bg-primary text-black'
+                className='w-full max-w-xs btn text-lg uppercase font-bold bg-primary btn-outline'
                 type='submit'
                 value='Login'
               />
             </form>
             <p className='text-center'>
               <small>
-                New Hardware Tools?{' '}
+                New Inventory Management?{' '}
                 <Link className='text-primary' to='/signup'>
                   Create New Account
                 </Link>
@@ -142,12 +137,6 @@ const Login = () => {
             <div className='divider'>OR</div>
             <button onClick={() => signInWithGoogle()} className='btn btn-outline text-lg bg-primary font-bold'>
               Continue with Google
-            </button>
-            <button onClick={() => signInWithFacebook()} className='btn btn-outline text-lg bg-primary font-bold'>
-              Continue with Facebook
-            </button>
-            <button onClick={() => signInWithGithub()} className='btn btn-outline text-lg bg-primary font-bold'>
-              Continue with Github
             </button>
           </div>
         </div>
