@@ -15,6 +15,7 @@ import CategoryUpdate from './Pages/Dashboard/CategoryUpdate';
 import CategoryNewItem from './Pages/Dashboard/CategoryNewItem';
 import CategoryList from './Pages/Dashboard/CategoryList';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<SignUp />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

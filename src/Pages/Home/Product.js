@@ -8,10 +8,12 @@ const Product = ({ product }) => {
         <img src={productImg} alt='Shoes' />
       </figure>
       <div className='card-body'>
-        <h2 className='card-title'>{productName}</h2>
-        <p>{productDescription}</p>
+        <h2 className='card-title text-accent'>{productName}</h2>
+        <h2 className='card-title text-accent'>Price: {productPrice}</h2>
+        <h2 className='card-title text-accent'>Category: {productCategory}</h2>
+        <p>{productDescription.slice(0, 120)}</p>
         <div className='card-actions justify-end'>
-          <button className='btn btn-primary'>Buy Now</button>
+          <button className='btn btn-primary'>Update</button>
         </div>
       </div>
     </div>
