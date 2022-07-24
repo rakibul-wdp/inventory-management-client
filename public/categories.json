@@ -1,0 +1,14 @@
+[
+  {
+    "categoryName": "HP Envy",
+    "categoryImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-n-1s/envy/HP%20Envy%20x360%2013.3.png"
+  },
+  {
+    "categoryName": "HP Pavilion",
+    "categoryImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/HP20160428981.png"
+  },
+  {
+    "categoryName": "HP Chromebook",
+    "categoryImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/Seastar_15_MineralSilver_NT_T_HDcam_nonODD_nonFPR_Chrome_CoreSet_Front.png"
+  }
+]

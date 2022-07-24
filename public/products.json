@@ -1,0 +1,65 @@
+[
+  {
+    "productName": "HP Envy x360 13.3",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-n-1s/envy/HP%20Envy%20x360%2013.3.png",
+    "productPrice": "$799.00",
+    "productCategory": "HP Envy",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Envy x360 15.6 (AMD)",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-n-1s/envy/HP%20Envy%20x360%2015.6%20(AMD).png",
+    "productPrice": "$899.00",
+    "productCategory": "HP Envy",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Envy 17.3 Laptop",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-n-1s/envy/HP%20Envy%2017.3%20Laptop%20.png",
+    "productPrice": "$999.00",
+    "productCategory": "HP Envy",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Pavilion x360 15",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/HP20160428981.png",
+    "productPrice": "$872.00",
+    "productCategory": "HP Pavilion",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Pavilion 14 Laptop",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/21C1_Pavilion_Ducky_15_NaturalSilver_T_HDcam_nonODD_SSscreenWave_Coreset_FrontFace%20(1).png",
+    "productPrice": "$1299.00",
+    "productCategory": "HP Pavilion",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Pavilion x360 14",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops/2-in-1s/pavilion/pavilion-plus-14-convertible-laptop/HP%20Pavilion%20x360%2014.png",
+    "productPrice": "$980.00",
+    "productCategory": "HP Pavilion",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Chromebook x2 11",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/Seastar_15_MineralSilver_NT_T_HDcam_nonODD_nonFPR_Chrome_CoreSet_Front.png",
+    "productPrice": "$1399.00",
+    "productCategory": "HP Chromebook",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Chromebook 14b",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/21C1_Chrome_Lepus_14_NaturalSilver_MineralSilver_T_HDcam_nonODD_nonFPR_SSscreen_Coreset_FrontFacing%20(2).png",
+    "productPrice": "$1500.00",
+    "productCategory": "HP Chromebook",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  },
+  {
+    "productName": "HP Chromebook x360 14b",
+    "productImg": "https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/new/21C1_Chrome_Lepus_14_NaturalSilver_MineralSilver_T_HDcam_nonODD_nonFPR_SSscreen_Coreset_FrontFacing%20(3).png",
+    "productPrice": "$1800.00",
+    "productCategory": "HP Chromebook",
+    "productDescription": "Windows 11 Home Intel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + Intel® Arc™ A370M Graphics (4 GB) 16 GB DDR5-4800 SDRAM (2 x 8 GB) 512 GB PCIe® NVMe™ TLC M.2 SSD (4x4 SSD"
+  }
+]
